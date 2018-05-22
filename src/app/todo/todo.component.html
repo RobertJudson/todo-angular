@@ -1,0 +1,19 @@
+<div class="content">
+<h3>Nova tarefa</h3>
+<input #done type="checkbox"/>
+<input #task type="text"/>
+<button (click)="newTask(done.value, task.value)">+</button>
+<ul *ngFor="let task of tasks">
+  <li>{{ task }}</li>
+</ul>
+<br/>
+<br/>
+<form ng-keypress="{13:'newTask(done.value, task.value)'}">
+    <input #done2 type="checkbox"/>
+    <input #task2 type="text"/>
+    <button (click)="newTask2(done2.value, task2.value)">+</button>
+  </form>
+<ul *ngFor="let task2 of tasks2">
+  <li>{{ task2 }}</li>
+</ul>
+</div>
