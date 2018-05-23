@@ -1,7 +1,13 @@
 .content{
-    background: #fff0c8;
-    width: 500px;
-    height: 500px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    background: #f1f1f1;
+    width: 100%;
+    max-width: 500px;
+    min-height: 500px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
     margin: 20px auto;
+    /* border: 1px solid #e0e0e0; */
+}
+
+#task{
+    height: 30px;
 }

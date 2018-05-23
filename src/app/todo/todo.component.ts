@@ -17,8 +17,9 @@ export class TodoComponent implements OnInit {
     "Tarefa de exemplo TASK 1"
   ];
   
-  newTask(done, task){
+  newTask(e, task){
     this.tasks.push(task);
+    e.value = "";
   }
 
   // TASK 2
