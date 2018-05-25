@@ -18,18 +18,22 @@ export class TodoComponent implements OnInit {
   ];
   
   newTask(e, task){
-    this.tasks.push(task);
-    e.value = "";
+    if(task.value != ""){
+      this.tasks.push(task.value);
+      task.value = "";
+      e.preventDefault();
+    }else{
+      e.preventDefault();
+    }
   }
 
-  // TASK 2
+  deleteTask(e){
+    var index = this.tasks.indexOf(e.textContent);
+    this.tasks.splice(index, 1);
+  }
 
-  public tasks2 = [
-    "Tarefa de exemplo TASK 2"
-  ];
-  
-  newTask2(done, task){
-    this.tasks2.push(task);
+  doneTask(e){
+    console.log(e);
   }
   
   ngOnInit() {

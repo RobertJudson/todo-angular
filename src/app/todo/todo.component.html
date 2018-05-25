@@ -1,9 +1,12 @@
 <div class="content">
-<!-- <h3>Nova tarefa</h3> -->
-<input #task id="task" type="text" placeholder="Nova tarefa"/>
-<button (click)="newTask(task, task.value)">+</button>
-<ul *ngFor="let task of tasks">
-  <li><input #done type="checkbox"/><span>{{ task }}</span></li>
+<form action="newTask(task, task.value)">
+  <input #task id="task" type="text" placeholder="Nova tarefa"/>
+  <button (click)="newTask($event, task)">+</button>
+</form>
+<ul>
+  <li *ngFor="let task of tasks">
+    <input type="checkbox" (click)="doneTask($event)"/><span #done>{{ task }}</span><button (click)="deleteTask(done)">X</button>
+  </li>
 </ul>
 <!-- <br/>
 <br/>
