@@ -14,26 +14,28 @@ export class TodoComponent implements OnInit {
   }
 
   public tasks = [
-    "Tarefa de exemplo TASK 1"
+    "Tarefa de exemplo"
   ];
   
-  newTask(e, task){
-    if(task.value != ""){
-      this.tasks.push(task.value);
-      task.value = "";
+  HandleNew(e, newTask){
+    if(newTask.value != ""){
+      this.tasks.push(newTask.value);
+      newTask.value = "";
       e.preventDefault();
     }else{
       e.preventDefault();
     }
   }
 
-  deleteTask(e){
-    var index = this.tasks.indexOf(e.textContent);
+  HandleDelete(selectedTask){
+    var index = this.tasks.indexOf(selectedTask.textContent);
     this.tasks.splice(index, 1);
   }
 
-  doneTask(e){
-    console.log(e);
+  HandleDone(check, selectedTask){
+      selectedTask.classList.toggle("done");
+      check.classList.toggle("checkDone");
+      console.log(selectedTask)
   }
   
   ngOnInit() {

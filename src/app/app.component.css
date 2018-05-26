@@ -14,7 +14,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(100% - 142px)
+    width: 100%;
+    margin-right: 182px;
 }
 
 .menu ul li{
@@ -36,7 +37,7 @@
 }
 
 .menu ul li a:hover{
-    color: #ffa835;
+    color: #ffdc7d;
 }
 
 @media only screen and (max-width: 980px) {
@@ -49,5 +50,6 @@
     .menu ul{
         flex-direction: column;
         padding-bottom: 10px;
+        padding-right: 0;
     }
 }

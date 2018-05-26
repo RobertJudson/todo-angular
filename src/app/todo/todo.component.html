@@ -1,21 +1,14 @@
 <div class="content">
-<form action="newTask(task, task.value)">
-  <input #task id="task" type="text" placeholder="Nova tarefa"/>
-  <button (click)="newTask($event, task)">+</button>
-</form>
-<ul>
-  <li *ngFor="let task of tasks">
-    <input type="checkbox" (click)="doneTask($event)"/><span #done>{{ task }}</span><button (click)="deleteTask(done)">X</button>
-  </li>
-</ul>
-<!-- <br/>
-<br/>
-<form ng-keypress="{13:'newTask(done.value, task.value)'}">
-    <input #done2 type="checkbox"/>
-    <input #task2 type="text"/>
-    <button (click)="newTask2(done2.value, task2.value)">+</button>
+  <div class="topBar"></div>
+  <form action="newTask(task, task.value)">
+    <button (click)="HandleNew($event, newTask)"><i class="fas fa-plus"></i></button>
+    <input #newTask id="newTask" type="text" placeholder="Nova tarefa" />
   </form>
-<ul *ngFor="let task2 of tasks2">
-  <li>{{ task2 }}</li>
-</ul> -->
+  <ul>
+    <li *ngFor="let task of tasks" class="list">
+      <div #check class="check" (click)="HandleDone(check, selectedTask)" ><i class="fas fa-check"></i></div>
+      <span #selectedTask>{{ task }}</span>
+      <div class="delete"><i class="fas fa-times" (click)="HandleDelete(selectedTask)"></i></div>
+    </li>
+  </ul>
 </div>
